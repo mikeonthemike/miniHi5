@@ -17,6 +17,6 @@ function giveHighFive() {
 		// Show response message
 		alert(response);
 		// Reset image source to show default hand image
-		hand.src = "hand.png";
+		hand.src = "palm2x.png";
 	}, 1000); // Wait 1 second for animation to finish
 }
