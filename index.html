@@ -1,38 +1,13 @@
+<!DOCTYPE html>
 <html>
 <head>
-
-<script type="text/javascript">
-
-function respond() {
-  var response = ["Boom!", "Get Some!", "Alright!", "My hero!", "Nice one!", "Oh Yeah!", "Way to Go!", "Get In!"];
-  //var responseLength = response.length;
-  //var responeRandom = Math.floor(Math.random()*responseLength);
-  //debugging line - show how many elements are in the response array
-  document.getElementById('responseRand').innerHTML = response.length;
-
-  //return a random element from the response array into the responseDisplay paragraph
-  document.getElementById('responseDisplay').innerHTML = response[Math.floor(Math.random()*response.length)];
-
-}
-/*
-window.onload = function() {
-  document.getElementById('palm').addEventListener('click', function (e) {
-     var img = document.createElement('img');
-     img.setAttribute('src', '/users/michaelspragg/github/hi5/palm2x.png');
-     e.target.appendChild(img);
-  });
-*/
-
-</script>
-
+	<title>High-Five App</title>
+	<script src="high-five.js"></script>
 </head>
 <body>
-
-<button onclick=respond()><img id="palm" src="/users/michaelspragg/github/hi5/palm2x.png" alt="High Five!"></button>
-
-<p id='responseRand'></p>
-
-<p id='responseDisplay'>Start</p>
-
+	<h1>High-Five App</h1>
+	<img src="hand.png" alt="Hand Image" id="hand">
+	<button onclick="giveHighFive()">High-Five!</button>
+	<p>Number of high-fives given: <span id="count">0</span></p>
 </body>
 </html>
