@@ -1,14 +1,33 @@
+/* Center-align all elements */
 body {
 	font-family: 'Roboto', sans-serif;
+        background-color: #F2F2F2;
+	color: #333333;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+}
+
+
+/* Set max width for main content */
+main {
+  max-width: 800px;
+  width: 100%;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+/* Set responsive layout for main content */
+@media screen and (max-width: 768px) {
+  main {
+    max-width: 100%;
+  }
 }
 
 h1, h2, h3 {
 	font-family: 'Lato', sans-serif;
-}
-
-body {
-	background-color: #F2F2F2;
-	color: #333333;
 }
 
 button {
