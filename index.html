@@ -1,45 +1,54 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>High-Five App</title>
-	<script src="high-five.js"></script>
-	<link rel="stylesheet" type="text/css" href="styles.css" />
-	
-	
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>miniHi5 — High-Five App</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-	<h1>High-Five App</h1>
-	<br>
-<p>I see you, I appreciate you.</p>
+  <canvas id="confetti-canvas"></canvas>
 
-<br>
+  <div class="app">
+    <header class="hero">
+      <h1 class="title">mini<span class="accent">Hi5</span></h1>
+      <p class="subtitle">I see you. I appreciate you.</p>
+    </header>
 
-<p>Any chance of a high-five?</p>
+    <p class="prompt">Go on — give yourself a high-five&nbsp;&#x1F91A;</p>
 
-<br>
-
-	<div class="container">
-  	<img src="palm2x.png" alt="Hand Image" id="hand" onclick="giveHighFive()">
-  	</div>
-	<br>
-	<p>Number of high-fives: <span id="count">0</span></p>
-
-<br>
-
-<p>Why? The psychological benefit of a high-five is proven. So here we are, available for a high five. Pass it on.</p>
-<br>
-<br>
-
-<footer>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6">
-        <p>&copy; 2023 Michael Spragg</p>
-      </div>
-
+    <div class="hand-zone" id="hand-zone">
+      <div class="glow"></div>
+      <img src="palm2x.png" alt="Tap for a high-five!" id="hand" draggable="false">
     </div>
-  </div>
-</footer>
 
+    <div class="stats">
+      <div class="stat-card glass">
+        <span class="stat-value" id="count">0</span>
+        <span class="stat-label">Total</span>
+      </div>
+      <div class="stat-card glass">
+        <span class="stat-value" id="today-count">0</span>
+        <span class="stat-label">Today</span>
+      </div>
+      <div class="stat-card glass">
+        <span class="stat-value" id="streak">0</span>
+        <span class="stat-label">Day Streak</span>
+      </div>
+    </div>
+
+    <p class="why">The psychological benefit of a high-five is <em>proven</em>.<br>So here we are. Pass it on.</p>
+
+    <footer>
+      <p>&copy; 2025 Michael Spragg &middot; miniHi5 v2.0</p>
+    </footer>
+  </div>
+
+  <div id="toast-container"></div>
+
+  <script src="high-five.js"></script>
 </body>
 </html>
