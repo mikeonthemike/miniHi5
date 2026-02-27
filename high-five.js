@@ -1,4 +1,4 @@
-/* ── miniHi5 v2.0 ────────────────────────────────────────── */
+/* ── miniHi5 v2.1 ────────────────────────────────────────── */
 
 (function () {
   "use strict";
@@ -79,6 +79,8 @@
 
     handZone.addEventListener("click", giveHighFive);
     handZone.addEventListener("touchstart", (e) => e.preventDefault(), { passive: false });
+
+    initPrivacyModal();
   });
 
   function resizeCanvas() {
@@ -217,6 +219,29 @@
     } else {
       animating = false;
     }
+  }
+
+  /* ── Privacy modal ──────────────────────────────────────── */
+  function initPrivacyModal() {
+    const overlay  = document.getElementById("privacy-modal");
+    const openBtn  = document.getElementById("privacy-link");
+    const closeBtn = document.getElementById("privacy-close-btn");
+    const clearBtn = document.getElementById("clear-data-btn");
+
+    function open(e)  { e.preventDefault(); overlay.classList.add("open"); }
+    function close()  { overlay.classList.remove("open"); }
+
+    openBtn.addEventListener("click", open);
+    closeBtn.addEventListener("click", close);
+    overlay.addEventListener("click", (e) => { if (e.target === overlay) close(); });
+
+    clearBtn.addEventListener("click", () => {
+      localStorage.removeItem(STORAGE_KEY);
+      state = defaultState();
+      renderStats();
+      showToast("Data cleared!");
+      close();
+    });
   }
 
   /* ── Audio (Web Audio API — no external files needed) ──── */

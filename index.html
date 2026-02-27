@@ -43,8 +43,25 @@
     <p class="why">The psychological benefit of a high-five is <em>proven</em>.<br>So here we are. Pass it on.</p>
 
     <footer>
-      <p>&copy; 2025 Michael Spragg &middot; miniHi5 v2.0</p>
+      <p>&copy; 2025 Michael Spragg &middot; miniHi5 v2.1 &middot; <a href="#" id="privacy-link">Privacy</a></p>
     </footer>
+  </div>
+
+  <div class="modal-overlay" id="privacy-modal">
+    <div class="modal glass">
+      <h2>Privacy Policy</h2>
+      <p>miniHi5 uses your browser's <strong>localStorage</strong> to remember your high-five stats (total count, today's count, and your day streak). That's it.</p>
+      <ul>
+        <li>Your data <strong>never leaves your device</strong> — nothing is sent to any server.</li>
+        <li>We don't use cookies, analytics, or any third-party tracking.</li>
+        <li>No personal information is collected or stored.</li>
+        <li>You can clear your stats at any time by clicking the button below, or by clearing your browser's site data.</li>
+      </ul>
+      <div class="modal-actions">
+        <button id="clear-data-btn" class="btn-secondary">Clear My Data</button>
+        <button id="privacy-close-btn" class="btn-primary">Got it</button>
+      </div>
+    </div>
   </div>
 
   <div id="toast-container"></div>
